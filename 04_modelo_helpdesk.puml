@@ -1,0 +1,50 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class User {
+  -id: int
+  -nombre: str
+  -email: str
+  -rol: str
+  +solicitar_ticket(titulo: str, categoria: str, prioridad: str): Ticket
+  +publicar_articulo(titulo: str, contenido: str): Article
+}
+
+class Ticket {
+  -id: int
+  -titulo: str
+  -categoria: str
+  -prioridad: str
+  -estado: str
+  +asignar_tecnico(tecnico: User): void
+  +cambiar_estado(nuevo_estado: str): void
+  +agregar_comentario(autor: User, mensaje: str): Comment
+}
+
+class Comment {
+  -id: int
+  -mensaje: str
+  -fecha: str
+  +editar(mensaje: str): void
+}
+
+class History {
+  -id: int
+  -accion: str
+  -fecha: str
+  +registrar_accion(accion: str): void
+}
+
+class Article {
+  -id: int
+  -titulo: str
+  -contenido: str
+  +actualizar_contenido(contenido: str): void
+}
+
+User "1" -- "0..*" Ticket : solicitante
+User "0..1" -- "0..*" Ticket : tecnico asignado
+Ticket "1" *-- "0..*" Comment : contiene
+Ticket "1" *-- "0..*" History : registra
+User "1" -- "0..*" Article : autor
+@enduml
