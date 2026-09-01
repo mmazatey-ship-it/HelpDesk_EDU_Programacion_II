@@ -1,6 +1,6 @@
-# Preparacion Primer Parcial - HelpDesk EDU
+# HelpDesk EDU - Programacion II
 
-Repositorio publico: https://github.com/mmazatey-ship-it/MazaMayco_PreparacionParcial1
+Repositorio publico: https://github.com/mmazatey-ship-it/HelpDesk_EDU_Programacion_II
 
 ## Archivos
 
