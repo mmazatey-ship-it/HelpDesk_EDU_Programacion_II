@@ -1,0 +1,6 @@
+Comando ejecutado:
+uv run pytest -q
+
+Resultado:
+.....                                                                    [100%]
+5 passed in 0.06s
